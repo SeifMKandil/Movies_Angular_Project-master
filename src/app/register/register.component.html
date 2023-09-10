@@ -18,11 +18,11 @@
 
                                 </div>
 
-                                <form [formGroup]="registerForm" (ngSubmit)="onRegister()" *ngIf="!isLoading">
+                                <form (ngSubmit)="onRegister(f , 'Firebase')" #f="ngForm" *ngIf="!isLoading">
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form2Example22" >{{"UserName" | translate}} </label>
                                         <input type="text" id="form2Example22" class="form-control" placeholder="{{'UserName' | translate}}"
-                                            formControlName="userName">
+                                            name=  "userName" ngModel required>
 
                                     </div>
 
@@ -30,12 +30,13 @@
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="form2Example22" >{{ "Email" | translate }} </label>
                                         <input type="email" id="form2Example22" class="form-control" placeholder="{{ 'Email' | translate }}"
-                                            formControlName="email">
-                                            <span class="help-block" style="color: red;"
-                                            *ngIf="!registerForm.get('email')!.valid && registerForm.get('email')!.touched">
-                                            Email Cannot be Empty <br>
-                                            Email should contain @ and .com
-                                        </span>
+                                            name="email" 
+                                            email 
+                                            required
+                                            ngModel
+                                            #email ="ngModel"
+                                            >
+                                            <span class="help-block error-message" *ngIf="!email.valid && email.touched" >Please Enter Valid Email</span>
 
                                     </div>
 
@@ -43,23 +44,24 @@
                                         <label class="form-label" for="form2Example22">{{"Password" |
                                             translate}}</label>
                                         <input type="password" id="password" class="form-control"
-                                            placeholder="{{'Password' | translate}}"formControlName="password">
+                                            placeholder="{{'Password' | translate}}"name="password"
+                                            ngModel
+                                            #password="ngModel"
+                                            required>
 
-                                            <span class="help-block" style="color: red;"
-                                            *ngIf="!registerForm.get('password')!.valid && registerForm.get('password')!.touched">
-                                            Password Cannot be Empty <br>
-                                            Password Should contain min 6 characters
-                                        </span>    
+                                            <span class="help-block error-message" *ngIf="!password.valid && password.touched" >Please Enter Password</span> 
 
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                                        [disabled]="!f.valid">{{"Register with Firebase" |
+                                            translate}} </button>
                                     </div>
 
                                 </form>
 
-                                <div class="text-center">
-                                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button"
-                                        (click)="onRegister('Firebase')" [disabled]="!registerForm.valid">{{"Register with Firebase" |
-                                        translate}}</button>
-                                </div>
+                               
 
                                 <div class="text-center">
                                     <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"

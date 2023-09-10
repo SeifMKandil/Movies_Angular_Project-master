@@ -25,30 +25,31 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginGuard } from './guards/login.guard';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
 
 
 
-const appRoutes: Routes = [
-  { path: '' , component: HomeComponent },
-  { path: 'register' , component: RegisterComponent },
-  { path: 'movieDetails/:id',component:MovieDetailsComponent},
-  {
-    path: 'catalogue',
-    component: CatalogueComponent,
-    canActivate: [AuthGuard], 
-  },
+// const appRoutes: Routes = [
+//   { path: '' , component: HomeComponent },
+//   { path: 'register' , component: RegisterComponent },
+//   { path: 'movieDetails/:id',component:MovieDetailsComponent},
+//   {
+//     path: 'catalogue',
+//     component: CatalogueComponent,
+//     canActivate: [AuthGuard], 
+//   },
 
   
 
-  {
-    path: 'auth',
-    component: AuthComponent,
-    canActivate: [LoginGuard], 
-  },
-] 
+//   {
+//     path: 'auth',
+//     component: AuthComponent,
+//     canActivate: [LoginGuard], 
+//   },
+// ] 
 
 @NgModule({
   declarations: [
@@ -70,7 +71,7 @@ const appRoutes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule, 
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
     ReactiveFormsModule,
     
     

@@ -56,33 +56,32 @@ export class AuthComponent implements OnInit{
 
   }
 
-  onLogin(type: string | null = null): void {
+  onLogin(form:NgForm , type:string) {
     if (type === 'Firebase'){
-      this.firebaseAuth.login(this.loginForm.value.email ,this.loginForm.value.password).subscribe(
+      this.firebaseAuth.login(form.value.email ,form.value.password).subscribe(
         responseData => {
-          console.log(this.loginForm.value.email)
-          console.log(responseData);
           this.router.navigate(['/catalogue'])
-          
-          
+
         }, error => {
           console.error("Firebase login error:", error);
           
         }
         
       )
-      console.log("FireBase Login ");
+      
     }else{
-      const userExist = this.registeredUsers.find(m=> m.email == this.loginForm.value.email && m.password == this.loginForm.value.password);
+      const userExist = this.registeredUsers.find(m=> m.email == form.value.email && m.password == form.value.password);
       if(userExist != undefined){
         alert("You have logged in ");
         this.loginObj.isLoggedin = true;
-        this.loginObj.email = this.loginForm.value.email;
-        console.log("Local Login ");
+        this.loginObj.email = form.value.email;
+       
   
       }else{
         alert("Failed!!");
       }
+
+    
 
     }
    

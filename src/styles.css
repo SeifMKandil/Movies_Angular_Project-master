@@ -44,3 +44,7 @@ html[dir=rtl] .movie-image{
     margin-right: 0px;
     margin-left: 20px;
 }
+
+.error-message{
+    color: #FF0000;
+}

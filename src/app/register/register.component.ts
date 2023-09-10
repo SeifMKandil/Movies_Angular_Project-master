@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { AuthenticationService } from './../services/authentication.service';
 import { FirebaseAuthService } from '../services/firebase-auth.service';
 
@@ -23,16 +23,16 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  onRegister(type: string | null = null): void {
+  onRegister(form:NgForm , type:string): void {
     if (type === 'Firebase') {
       this.isLoading=true;
-      console.log('Registering with Firebase');
-      this.firebaseAuthService.register(this.registerForm.value.email ,this.registerForm.value.password).subscribe(
+      
+      this.firebaseAuthService.register(form.value.email ,form.value.password).subscribe(
         responseData => {
-          console.log(responseData);
+          
           this.isLoading=false;
         }, error => {
-          console.log(error);
+        
           this.error="Error Occured"
           this.isLoading=false;
         }
@@ -42,14 +42,14 @@ export class RegisterComponent implements OnInit {
     } else {
       if (this.registerForm.valid) {
         const registerObj = {
-          userName: this.registerForm.value.userName,
-          email: this.registerForm.value.email,
-          password: this.registerForm.value.password
+          userName: form.value.userName,
+          email: form.value.email,
+          password: form.value.password
         };
 
         this.authService.addRegisteredUser(registerObj);
         localStorage.setItem('registeredUsers', JSON.stringify(this.authService.getRegisteredUsers()));
-        console.log('Registering with Local Storage');
+        
         // Add Local Storage registration logic here
       }
     }
