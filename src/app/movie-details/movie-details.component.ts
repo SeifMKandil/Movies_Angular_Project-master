@@ -34,7 +34,7 @@ export class MovieDetailsComponent {
       this.movieDetailAr = response;
 
       
-
+      
       if(this.currentLang == 'ar'){
         this.isArabic =true;
       }else{
