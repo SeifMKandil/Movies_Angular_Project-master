@@ -1,0 +1,19 @@
+{
+    "Login": "تسجيل الدخول",
+    "Email":"بريدك الالكتروني",
+    "Password":"كلمه السر",
+    "Don't Have an account?":"ليس لديك حساب؟",
+    "Register":"تسجيل دخول",
+    "Login with Firebase":"سجل ب فايربيز",
+    "Top Movies": "افضل الافلام",
+    "Login | Register" : "تسجيل الدخول",
+    "Already a user ?" : "عضو قديم؟",
+    "Register with Firebase" :    "سجل ب فايربيز",
+    "Release":"تاريخ", 
+    "Rating":"تقييم",
+    "Catalogue":"افلام",
+    "LogOut" :"تسجيل خروج",
+    "UserName":"الاسم",
+    "Description":"الوصف"
+
+}

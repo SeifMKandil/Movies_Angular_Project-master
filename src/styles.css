@@ -1,0 +1,46 @@
+
+.mat-mdc-progress-spinner { --mdc-circular-progress-active-indicator-color: rgb(228, 10, 10); }
+
+:root {
+    --Movie-Red: #ff0000;
+}
+
+a{
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #FF0000, #8B0000, #000000);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+}
+
+body{
+    background: linear-gradient(to right,#000000,#8B0000, #8B0000, #000000);
+    color: transparent;
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    color: white;
+    margin: 0;
+    padding: 0; 
+}
+
+html[dir=rtl] .Main-Text {
+    padding-left: 0px;
+    padding-right: 120px;
+}
+
+html[dir=rtl] .have-account{
+    margin-right: 0px; ;
+    margin-left: 0.5rem;
+}
+
+html[dir=rtl] .movie-image{
+    margin-right: 0px;
+    margin-left: 20px;
+}

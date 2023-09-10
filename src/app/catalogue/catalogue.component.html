@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Rated Movies</title>
+</head>
+<body>
+    <app-header></app-header>
+    <div class="container">
+        <h1 class="gradient-text" style="text-align: center; padding-bottom: 20px;"><b><i>{{"Top  Movies" | translate}}</i></b></h1>
+
+        <a [routerLink]="['/movieDetails',movie.id]" *ngFor="let movie of movies?.results" class="movie-container" style="text-decoration: none; color: rgb(255, 255, 255);">
+            <div class="movie-image">
+                <img src="{{'https://image.tmdb.org/t/p/original' + movie.poster_path}}" alt="Movie 1">
+            </div>
+            <div class="movie-details" id="movie-details">
+                <h3>{{movie.title}}</h3>
+                <p style="font-size: medium;"  ><span style="color: red;">{{"Release" | translate}}:</span> {{movie.release_date}}</p>
+                <p style="font-size: medium;" style="color: gold;">{{"Rating" | translate}}: {{movie.vote_average}}</p>
+            </div>
+        </a>
+
+        
+
+
+
+        
+
+        <!-- Repeat the above movie entry structure for each movie -->
+        <!-- You can use a loop in your backend code to generate these entries dynamically -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

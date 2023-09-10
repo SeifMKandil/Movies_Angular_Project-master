@@ -1,0 +1,25 @@
+
+.bg-black {
+    background-color: black;
+}
+
+.text-white {
+    color: white;
+}
+
+.navbar{
+    border-bottom: 5px solid var(--Movie-Red); 
+
+}
+
+.header-title{
+   padding-left: 8px;
+   font-size: x-large;
+   font-weight:bold;
+   color: var(--Movie-Red);
+}
+
+.btn-outline-danger{
+    
+    color: var(--Movie-Red);
+}

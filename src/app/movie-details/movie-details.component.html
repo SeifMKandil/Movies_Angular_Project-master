@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/originals/b0/eb/41/b0eb41bdb91e75f326a0b1056fa088c6.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gradient-form {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 50px 0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #FF0000, #8B0000, #000000);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* Style for the image */
+        .image-container {
+            width: 100%; /* Set the width to 100% of the container width */
+            height: 100%; /* Set the height to 100% of the container height */
+        }
+
+        .image-container img {
+            width: 100%; /* Ensure the image fills the entire container width */
+            height: 100%; /* Ensure the image fills the entire container height */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <app-header></app-header>
+
+    <section class="h-100 gradient-form">
+        <div class="container" >
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
+                                    
+                                        <h3 class="mt-1 mb-5 pb-1" style="padding-top: 0px; text-decoration: underline; text-align: center;"><span class="gradient-text"><b><i>{{movieDetail?.original_title}}</i></b> </span>
+                                        </h3>
+                                    
+                                    <div>
+                                        <p class="gradient-text" style="font-size:large;"><b>{{"Release" | translate}}</b><span class="gradient-text" style="color: #000000;"><b>{{movieDetail?.release_date}}</b></span></p>
+                            
+                                        <p class="gradient-text" style="font-size:large;" ><b>{{"Rating" | translate}}: </b><span style="color: #000000;"><b>{{movieDetail?.vote_average}}</b></span></p>
+
+                                        <p class="gradient-text descTranslation" style="font-size:large; " *ngIf="isArabic;"><b>{{"Description" | translate}}: </b><span style="color: #000000;"><b>{{movieDetailAr?.overview}}</b></span></p>
+
+                                        <p class="gradient-text descTranslation" style="font-size:large; " *ngIf="!isArabic;"><b>{{"Description" | translate}}: </b><span style="color: #000000;"><b>{{movieDetail?.overview}}</b></span></p>
+
+                                    </div>
+                                    <div class="flex-container" style="padding-top: 30px;">
+                                        <button type="button" class="btn btn-outline-danger" style="margin-right: 30px;">Watch Trailer</button>
+                                        <button type="button" class="btn btn-outline-success">Watch Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <!-- Container for the image with squared dimensions -->
+                                <div class="image-container">
+                                    <img src="{{'https://image.tmdb.org/t/p/original' + movieDetail?.poster_path}}"
+                                        alt="Image">
+                                </div>
+                                <!-- Replace this text content with an image -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

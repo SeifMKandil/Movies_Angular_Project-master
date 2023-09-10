@@ -1,0 +1,46 @@
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ec1616, #000000, #ff0707, #111011);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #FF0000, #8B0000, #000000);
+}
+    
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
+
+
+    
+    body , html {
+        background-image: url('https://i.pinimg.com/originals/b0/eb/41/b0eb41bdb91e75f326a0b1056fa088c6.jpg');
+        background-size: 100% 100%; /* Set the background image to cover the entire page */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white; /* Text color for better visibility on a dark background */
+        margin: 0; /* Remove default margin to fill the entire viewport */
+        padding: 0; /* Remove default padding */
+        overflow: hidden;
+        
+    }
+
+    .gradient-form {
+        background-color: rgba(0, 0, 0, 0.5); /* Background overlay to make text more readable */
+        padding: 50px 0;
+    }
+
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+    
+}
+
+input.ng-valid.ng-touched {
+    border: 1px solid rgb(30, 255, 0);
+}

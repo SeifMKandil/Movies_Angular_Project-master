@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body dir="auto">
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-black">
+        <div class="container-fluid">
+            <a class="header-title gradient-text" routerLink="/">Netflix</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Other navigation items here -->
+                </ul>
+    
+                <!-- Move these items to the right -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" *ngIf="isAuthenticated">
+                        <a class="nav-link active text-white" aria-current="page" routerLink="/catalogue">{{"Catalogue" | translate}}</a>
+                    </li>
+
+                    <li class="nav-item" *ngIf="!isAuthenticated">
+                        <a class="nav-link active text-white" aria-current="page" style="padding-right: 20px;" routerLink="/auth">{{"Login | Register" | translate}}</a>
+                    </li>
+
+                    <li class="nav-item" *ngIf="isAuthenticated">
+                        <a class="nav-link active text-white" routerLink="" (click)="onLogout()" >{{"LogOut" | translate}}</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <button class="btn btn-outline-danger" style="margin-right: 10px;" (click)="changeCurrentLang('en')">En</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-danger" (click)="changeCurrentLang('ar')">Ar</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>
